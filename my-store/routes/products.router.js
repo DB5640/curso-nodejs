@@ -6,10 +6,10 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     const products = Array.from({ length: 10 }, () => ({
-      id: faker.datatype.uuid(),
+      id: faker.string.uuid(),
       name: faker.commerce.productName(),
       price: parseInt(faker.commerce.price()),
-      image: faker.image.imageUrl()
+      image: faker.image.url()
     }));
     res.json(products);
   });

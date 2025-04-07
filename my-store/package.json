@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "nodemon": "nodemon index.js",
+    "node:debug": "node --inspect-brk index.js",
+    "nodemon:debug": "nodemon --inspect index.js",
     "start": "node index.js",
     "lint": "eslint"
   },

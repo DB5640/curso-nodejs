@@ -1,4 +1,4 @@
-const productsRouter = require('./proucts.router');
+const productsRouter = require('./products.router');
 const usersRouter = require('./users.router');
 
 function routerApi(app){
