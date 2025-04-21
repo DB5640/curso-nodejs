@@ -1,0 +1,25 @@
+GET http://localhost:3000/api/v1/products
+Content-Type: application/json
+
+###
+
+POST http://localhost:3000/api/v1/products
+
+{
+    "id": "01JSAXA4GS24E1PNKEBJW7NW41",
+    "name": "Licensed Aluminum Bacon",
+    "price": 537,
+    "image": "https://picsum.photos/seed/jsI4D2/3969/1770"
+  }
+
+###
+PATCH http://localhost:3000/api/v1/products/01JSAZZ3SABHCR331761NN7XHH
+
+Content-Type: application/json
+
+{
+    "id": "01JSAZZ3SABHCR331761NN7XHH",
+    "name": "David",
+    "image": "SinImagen"
+  }
+
