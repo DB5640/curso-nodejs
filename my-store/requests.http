@@ -10,7 +10,7 @@ POST http://localhost:3000/api/v1/products
     "name": "Licensed Aluminum Bacon",
     "price": 537,
     "image": "https://picsum.photos/seed/jsI4D2/3969/1770"
-  }
+}
 
 ###
 PATCH http://localhost:3000/api/v1/products/123
@@ -20,7 +20,7 @@ Content-Type: application/json
     "id": "01JSD6AD28FZTV7ZR6YTYRJ7KE",
     "price": 894,
     "image": "SinImagen"
-  }
+}
 
 ###
 DELETE http://localhost:3000/api/v1/products/01JSD6P0B1P4BZ11JBMTHSHFTC
