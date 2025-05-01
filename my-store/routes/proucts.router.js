@@ -1,13 +1,9 @@
-/* eslint-disable no-unused-vars */
 const express = require('express')
 
 const ProductsService = require('../services/products.service.js')
 const validatorHandler = require('../middlewares/validatorHandler.js')
-const {
-  createProductSchema,
-  updateProductSchema,
-  getProductSchema
-} = require('../schemas/product.dto.js')
+
+const {createProductSchema, getProductSchema, updateProductSchema} = require('../schemas/product.dto.js')
 
 const router = express.Router()
 const service = new ProductsService()
@@ -17,7 +13,7 @@ router.get('/', async (req, res) => {
   res.json(products)
 })
 
-router.get('/:id', async (req, res, next) => {
+router.get('/:id', validatorHandler(getProductSchema, 'params'), async (req, res, next) => {
   try {
     const { id } = req.params
     const product = await service.findOne(id)
@@ -27,7 +23,7 @@ router.get('/:id', async (req, res, next) => {
   }
 })
 
-router.post('/', async (req, res) => {
+router.post('/', validatorHandler(createProductSchema, 'body'), async (req, res) => {
   const body = req.body
   const newProduct = await service.create(body)
   res.status(201).json({
@@ -36,7 +32,7 @@ router.post('/', async (req, res) => {
   })
 })
 
-router.patch('/:id', async (req, res, next) => {
+router.patch('/:id', validatorHandler(getProductSchema, 'params'), validatorHandler(createProductSchema, 'body'), async (req, res, next) => {
   try {
     const { id } = req.params
     const body = req.body
